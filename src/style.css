@@ -1,0 +1,64 @@
+h1 {
+     
+    margin-left: 20px;
+}
+.form{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
+.main_container {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+     
+    border: solid 2px black;
+}
+
+.formbox_namebox {
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+label{
+    margin-right: 10px;
+}
+input{
+    
+    height: 25px;
+}
+.formbox_email{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+     gap: 45px;
+      
+}
+textarea{
+    height: 20px;
+}
+.formbox_address1{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+     
+}
+
+.formbox_phone{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+      
+}
+.formbox_country{
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
