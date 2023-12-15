@@ -7,9 +7,9 @@ h1 {
 .main_container {
     display: grid;
     place-content: center;
-    height: 50vh;
+   margin-top: 10%;
      
-    border: solid 2px black;
+    
 }
 
 .formbox_namebox {
@@ -61,4 +61,33 @@ textarea{
     display: flex;
     align-items: center;
     gap: 45px;
+}
+
+.table_display{
+   
+    place-items: center;
+    height: 60vh;
+    margin: 20px;
+    padding: 10px;
+  
+}
+ 
+
+.tableheads{
+    background-color: antiquewhite;
+}
+.tablerows{
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.table_button{
+    width: 20px;
+    display: flex;
+    gap: 12px;
+}
+.table_above{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 25px;
 }

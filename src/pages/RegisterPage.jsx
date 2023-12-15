@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Country, State, City } from "country-state-city";
-import {  useDispatch } from 'react-redux';
-import { addUser } from '../redux/userSlice';
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/userSlice";
 import PhoneInput from "react-phone-input-2";
 import "../style.css";
+
 import "react-phone-input-2/lib/style.css";
+import { useNavigate } from "react-router";
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
 
-  const dispatch = useDispatch()
-  const [finalset, setfinalset] = useState({})
+  const dispatch = useDispatch();
 
   const [userDetail, setUserDetail] = useState({
     firstName: "",
@@ -34,40 +36,43 @@ const RegisterPage = () => {
     const countries = Country.getAllCountries();
     setCountry(countries);
   };
- 
+
   useEffect(() => {
     fetchContry();
-   
-  }, []);
+    function phoneEvent() {
+      setUserDetail((prev) => {
+        return { ...prev, phone: "+"+phone };
+      });
+    }
+    phoneEvent();
+  }, [phone]);
 
   const handleChangeCountry = (event) => {
     const index = event.target.value;
     setCountryCode(country[index]?.isoCode);
-  
+
     handleSubmit(event, index);
   };
   const handleChangeState = (event) => {
     const index = event.target.value;
     setStateCode(allState[index].isoCode);
- 
+
     handleSubmit(event, index);
   };
   const handleChangeCity = (event) => {
     const index = event.target.value;
- 
+
     handleSubmit(event, index);
   };
 
   const handChangePhone = (event) => {
-    setPhone(event)
-    setUserDetail((prev) => {
-      return { ...prev, "phone":phone };})
+    setPhone(event);
   };
 
   const handleSubmit = (e, index, event) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(event)
+    console.log(event);
     switch (name) {
       case "country":
         setUserDetail((prev) => {
@@ -75,7 +80,6 @@ const RegisterPage = () => {
         });
         break;
       case "state":
- 
         setUserDetail((prev) => {
           return { ...prev, [name]: allState[index].name };
         });
@@ -85,29 +89,22 @@ const RegisterPage = () => {
           return { ...prev, [name]: allCity[index].name };
         });
         break;
-    
-      
+
       default:
         setUserDetail((prev) => {
-          return { ...prev, [name]:value };
+          return { ...prev, [name]: value};
         });
 
         break;
     }
-   
   };
 
-  const handleallsubmit =(e)=>{
-    e.preventDefault()
-   
-    dispatch(addUser(userDetail))
-      
-     
-  }
- 
+  const handleallsubmit = (e) => {
+    e.preventDefault();
 
-  
-   
+    dispatch(addUser(userDetail));
+    navigate("/user");
+  };
 
   return (
     <>
@@ -115,7 +112,7 @@ const RegisterPage = () => {
         <div className="main_container">
           <h1>Registration Form</h1>
           <div className="form">
-            <form autocomplete="off" onSubmit={handleallsubmit} >
+            <form autoComplete="off" onSubmit={handleallsubmit}>
               <div className="formbox_namebox">
                 <label>First Name</label>
                 <input
@@ -153,7 +150,6 @@ const RegisterPage = () => {
                   placeholder="Phone number"
                   value={phone}
                   onChange={handChangePhone}
-                  autoFormat={false} 
                 />
               </div>
               <div className="formbox_address1">
@@ -177,16 +173,19 @@ const RegisterPage = () => {
                   required
                 >
                   {country.map((ct, index) => (
-                    
-                    <option defaultValue={true} key={index} value={index} >
+                    <option defaultValue={true} key={index} value={index}>
                       {ct.name}
-                      
                     </option>
                   ))}
                 </select>
                 <label>State</label>
-                <select name='state' style={{ width: "200px" }} onChange={handleChangeState} required>
-                <option></option>
+                <select
+                  name="state"
+                  style={{ width: "200px" }}
+                  onChange={handleChangeState}
+                  required
+                >
+                  <option></option>
                   {allState.map((allst, index) => (
                     <option key={index} value={index}>
                       {allst.name}
@@ -194,10 +193,14 @@ const RegisterPage = () => {
                   ))}
                 </select>
                 <label>City</label>
-                <select name="city" style={{ width: "200px" }} onChange={handleChangeCity} required>
-                <option></option>
+                <select
+                  name="city"
+                  style={{ width: "200px" }}
+                  onChange={handleChangeCity}
+                  required
+                >
+                  <option></option>
                   {allCity.map((allct, index) => (
-                    
                     <option key={index} value={index}>
                       {allct.name}
                     </option>
