@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
 import { v4 as uuidv4 } from "uuid";
 const initialState = {
   usersData: [],
@@ -15,7 +14,6 @@ const userSlice = createSlice({
         ...action.payload,
       };
       state.usersData.push(newUser);
-      console.log(state);
     },
 
     deleteAllUser: (state, action) => {
@@ -26,7 +24,6 @@ const userSlice = createSlice({
         return val.id !== action.payload;
       });
     },
-    editUser: (state, action) => {},
   },
 });
 

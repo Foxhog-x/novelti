@@ -111,7 +111,7 @@ select {
 }
 .grid_container {
   display: grid;
-  background-image: url("nattu-adnan-Ai2TRdvI6gM-unsplash.jpg");
+  background-image: url("../public/nattu-adnan-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center;

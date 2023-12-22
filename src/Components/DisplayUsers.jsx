@@ -37,7 +37,7 @@ export const DisplayUsers = () => {
     <>
       <div className="table_display">
         <div className="table_above">
-          <h1>List Of User Data</h1>{" "}
+          <h1>List Of User Data</h1>
           <button
             className="delete_btn"
             onClick={() => deleteAllUserfunction()}
@@ -137,43 +137,3 @@ export const DisplayUsers = () => {
 };
 
 export default DisplayUsers;
-
-{
-  /* <table className="table" width="100%"  >
-        <thead className="tablehead">
-          <tr   height="50px" className="tableheads" >
-            <th scope="col" width="5%"></th>
-            <th scope="col" width="10%"></th>
-            <th scope="col" width="10%">Last Name</th>
-            <th scope="col" width="15%">Email</th>
-            <th scope="col" width="10%">Country</th>
-            <th scope="col" width="10%">State</th>
-            <th scope="col" width="10%">City</th>
-            <th scope="col" width="10%">Address</th>
-            <th scope="col" width="15%">Phone</th>
-            <th scope="col" width="20px">Action Button</th>
-          </tr>
-        </thead>
-        <tbody>
-        {data.usersData.map((value, index)=>{
-        return( 
-          <tr height="50px" className="tablerows" key={index}>
-            <th>{index }</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{value.city}</td>
-            <td>{value.address}</td>
-            <td></td>
-            <td><div className="table_button">
-              <button onClick={( )=>editUserFunction(index )} ><img src={edit_svg} alt="edit"/> </button>
-              <button className="table_deletebutton" onClick={()=>deleteUserfunction(value.id)}><img src={trash_Svg} alt="delete"/> </button>
-            </div></td>
-          </tr>)
-        })}
-         
-        </tbody>
-      </table> */
-}

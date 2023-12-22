@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+
 import "./style.css";
 import RegisterPage from "./pages/RegisterPage";
 import { Routes, Route } from "react-router";
