@@ -1,93 +1,170 @@
-h1 {
-     
-    margin-left: 20px;
+.form {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.form{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
 .main_container {
-    display: grid;
-    place-content: center;
-   margin-top: 10%;
-     
-    
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.tableheads {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 2px solid black;
+}
+.table_row {
+  border: 2px solid black;
+  background-color: white;
+}
+.table_above {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete_btn {
+  background-color: #bf3131;
+
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 10px;
+  margin-right: 20px;
+  border-radius: 8px;
+  padding: 5px;
+}
+.delete_btn:hover {
+  background-color: red;
+  color: white;
+}
+.table_button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+.table_deletebutton {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 3px;
+  margin-right: 5px;
+  border-radius: 8px;
+  padding: 3px;
+  background-color: #bf3131;
+}
+
+.table_deletebutton:hover {
+  background-color: red;
+  color: white;
+}
+
+.table_edit {
+  background-color: white;
+}
+
+.nav {
+  background-color: #bf3131;
 }
 
 .formbox_namebox {
-    margin: 20px;
-    padding: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Form_container {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+}
+label {
+  width: 100px;
+  margin: 3px;
+  margin-left: 10px;
+  color: white;
+}
+input {
+  width: 300px;
+  height: 25px;
+  border-radius: 5px;
+  height: 35px;
+  border: 1px solid #cacaca;
+  padding: 10px;
+}
+
+.select_dropdown {
+  align-items: center;
+}
+select {
+  width: 300px;
+  height: 35px;
+}
+
+.formbox_email {
+  display: flex;
+  gap: 20px;
+  margin: 25px;
+  align-items: center;
+}
+.grid_container {
+  display: grid;
+  background-image: url("nattu-adnan-Ai2TRdvI6gM-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+
+  /* width: 500px; */
+  /* height: 500px; */
+  place-items: center;
+  height: 100vh;
+}
+@media screen and (max-width: 980px) {
+  .formbox_email {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px;
+    align-items: center;
+  }
+  .select {
+    width: 280px;
+    height: 35px;
+  }
+  .Form_container {
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    justify-content: center;
     display: flex;
     gap: 20px;
+    flex-direction: column;
     align-items: center;
-    
-}
-label{
-    margin-right: 10px;
-}
-input{
-    
-    height: 25px;
-}
-.formbox_email{
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-     gap: 45px;
-      
-}
-textarea{
-    height: 20px;
-}
-.formbox_address1{
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-     
+    border-radius: 10px;
+    padding: 20px;
+    width: 375px;
+    margin-bottom: 20px;
+  }
+  .grid_container {
+    height: 100%;
+    margin-bottom: 40px;
+  }
 }
 
-.formbox_phone{
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-      
-}
-.formbox_country{
-    display: flex;
-    margin: 20px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 45px;
-}
+.submit_btn {
+  background: #0066a2;
 
-.table_display{
-   
-    place-items: center;
-    height: 60vh;
-    margin: 20px;
-    padding: 10px;
-  
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 10px;
+  margin-right: 20px;
+  border-radius: 8px;
+  padding: 5px;
+  width: 80px;
+  color: white;
 }
- 
-
-.tableheads{
-    background-color: antiquewhite;
-}
-.tablerows{
-    text-align: center;
-    background-color: whitesmoke;
-}
-
-.table_button{
-    width: 20px;
-    display: flex;
-    gap: 12px;
-}
-.table_above{
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 25px;
+.submit_btn:hover {
+  background-color: green; /* change to your desired color */
+  color: white; /* change to your desired color */
 }
