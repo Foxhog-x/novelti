@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
+
 const initialState = {
   usersData: [],
 };
@@ -9,11 +9,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-      const newUser = {
-        id: uuidv4(),
-        ...action.payload,
-      };
-      state.usersData.push(newUser);
+      state.usersData.push(action.payload);
     },
 
     deleteAllUser: (state, action) => {
